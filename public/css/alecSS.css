@@ -285,6 +285,9 @@ body::-webkit-scrollbar-button {display:none}
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
+p#modal-info{
+  color:white;
+}
 
 /* The Close Button */
 .close-modal {

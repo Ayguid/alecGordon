@@ -24,39 +24,37 @@
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-data">
     <span id=close-modal class="close-modal">&times;</span>
-    {{-- <p>Some text in the Modal..</p> --}}
+    <p id="modal-info"></p>
     <div class="videoBox">
-
     <iframe id="iframe" src="" width="" height="" allow="autoplay; fullscreen" allowfullscreen></iframe>
   </div>
   </div>
-
 </div>
+<!-- Modal end -->
 
 <script type="text/javascript">
   var videos = <?php echo $videos ?>;
-  var cards = document.getElementsByClassName('unselectable');
-  var modal = document.getElementById('myModal');
-  var span = document.getElementById("close-modal");
-  var iframe = document.getElementById('iframe');
-  console.log(span);
+  const cards = document.getElementsByClassName('unselectable');
+  const modal = document.getElementById('myModal');
+  const modal_info = document.getElementById('modal-info');
+  const span = document.getElementById("close-modal");
+  const iframe = document.getElementById('iframe');
+
 
   for (var i = 0; i < cards.length; i++) {
     cards[i].addEventListener('click', pushToModal);
   }
 
-  function pushToModal(event){
+  function pushToModal(){
     // console.log(this.getElementsByTagName('input')[0].value);
-    event.preventDefault();
     let sub = this.getElementsByTagName('input')[0].value;
     let movie_to_modal = videos[sub];
-    console.log(movie_to_modal);
     modal.style.display = "block";
     iframe.src="https://player.vimeo.com/video/"+movie_to_modal.vimeo_dir;
+    modal_info.innerHTML=movie_to_modal.name;
   }
 
 // When the user clicks on <span> (x), close the modal
