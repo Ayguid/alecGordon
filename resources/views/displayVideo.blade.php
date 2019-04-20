@@ -6,12 +6,14 @@
 
 
   <div class="videoBox">
-    <iframe src="{{"https://player.vimeo.com/video/".$video->vimeo_dir}}" width="" height="" allow="autoplay; fullscreen" allowfullscreen></iframe>
-    <h4>{{$video->name}}</h4> <br>
-    <h5>{{$video->description}}</h5> <br>
+    <iframe src="{{"https://player.vimeo.com/video/".$video->vimeo_dir}}" allow="autoplay; fullscreen" allowfullscreen></iframe>
     {{-- <a href="{{route('landing')}}">Back</a> --}}
   </div>
-  @include('components.movies')
+  <div class="videoBoxInfo">
+  <h4>{{$video->name}}</h4> <br>
+  <h5>{{$video->description}}</h5> <br>
+</div>
+@include('components.movies')
 </div>
 
 

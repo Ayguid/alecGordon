@@ -4,12 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alec Gordon</title>
-  {{-- scripts --}}
-  {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-  <script src="{{ asset('js/nav-bar.js') }}" ></script>
-  <script type="text/javascript" src="{{ asset('js/loader.js') }}"></script>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -17,11 +11,16 @@
   <link href="{{ asset('css/alecSS.css') }}" rel="stylesheet">
   <link href="{{ asset('css/nav.css') }}" rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  {{-- scripts --}}
+  {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+  <script type="text/javascript" src="{{ asset('js/loader.js') }}"></script>
 </head>
 <body>
-
   <div class="se-pre-con"></div>
-  <nav class="navbarA">
+
+  <nav id="navbarA" class="navbarA">
     <span class="navbar-toggle" id="js-navbar-toggle">
       <i class="fas fa-bars"></i>
     </span>
@@ -47,6 +46,7 @@
 
 
 
-
+  <script src="{{ asset('js/nav-bar.js') }}" ></script>
+  <script type="text/javascript" src="{{ asset('js/scroll.js') }}"> </script>
   </body>
   </html>

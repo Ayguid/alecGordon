@@ -3,6 +3,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  line-height: 1 !important;
+}
+html {
+  scroll-behavior:smooth;
 }
 
 body {
@@ -30,18 +34,25 @@ section#background-section #backgroundVideoContainer video{
 
 #background-section .over-video{
   position: absolute;
-  background-color: rgba(163, 163, 163, 0.22);
   z-index: 10;
   top: 50%;
+  transform: translateY(-50%);
   max-width: 60%;
   left: 20%;
 }
-.over-video p{
-  text-align: center;
-  margin: 0;
-  color: white;
+
+
+.arrow i, .arrow a:hover {
+  display: block;
+  color: #a8a7a7;
+  text-decoration: none;
 }
 
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
 
 #reel-section{
   background-color: rgb(121, 121, 121);
@@ -55,20 +66,24 @@ section#background-section #backgroundVideoContainer video{
 
 .display_background{
   background-color: rgb(121, 121, 121);
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .videoBox{
-  padding-top: 90px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+padding:56.25% 0 0 0;
+position:relative;
 }
 .videoBox iframe{
-  width:640px;
-  height: 360px;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
 }
-
+.videoBoxInfo{
+  text-align: center;
+  padding: 10px;
+}
 .card_hov {
   width: 100%;
   /* height: 100%; */
@@ -77,9 +92,6 @@ section#background-section #backgroundVideoContainer video{
   position: relative;
   text-align: center;
   cursor: default;
-  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
 }
 
 .card_hov .overlay {
@@ -123,57 +135,16 @@ box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
 }
 
 .overlay{
-
   cursor: pointer;
-
 }
 .overlay h5, .overlay h6, .overlay p{
   margin: 0;
   padding: 0;
   color:rgb(31, 170, 141);
-
 }
 
 
 
-.fade_in{
-  animation: fadein 2s;
--moz-animation: fadein 2s; /* Firefox */
--webkit-animation: fadein 2s; /* Safari and Chrome */
--o-animation: fadein 2s; /* Opera */
-}
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-moz-keyframes fadein { /* Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 
 
@@ -191,3 +162,143 @@ box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.75);
 	background: url('../img/loader2.gif') center no-repeat #fff;
 }
 /*laoder stuff  ends*/
+
+
+
+
+/* scroll */
+/* Customize website's scrollbar like Mac OS
+Not supports in Firefox and IE */
+
+/* total width */
+body::-webkit-scrollbar {
+    background-color:#fff;
+    width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+    background-color:#babac0;
+    border-radius:16px;
+    border:4px solid #fff
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {display:none}
+/* scroll end */
+
+
+
+/*Bounce animation arrow  */
+
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+/*Bounce animation arrow end  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Video Modal
+-----------------------------------------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content/Box */
+.modal-data {
+  background-color: rgba(#000000, 0.44);
+  margin: 3% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  z-index: 100;
+  line-height: 20px;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
