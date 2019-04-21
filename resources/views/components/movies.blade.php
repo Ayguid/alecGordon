@@ -53,7 +53,7 @@
     let sub = this.getElementsByTagName('input')[0].value;
     let movie_to_modal = videos[sub];
     modal.style.display = "block";
-    iframe.src="https://player.vimeo.com/video/"+movie_to_modal.vimeo_dir;
+    iframe.src="https://player.vimeo.com/video/"+movie_to_modal.vimeo_dir+"?autoplay=1&transparent=false";
     modal_info.innerHTML=movie_to_modal.name;
   }
 
