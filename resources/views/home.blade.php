@@ -13,16 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div class="mb-3">
 
-                    You are logged in as <strong>USER!</strong>
-                    <br>
-                    <br>
+                    You are logged in as <strong>The ALEC!</strong>
+                  </div>
 
                     <div class="">
-                      <a href="{{route('showMyVideos')}}">Mi videos</a>
+                      <a class="btn btn-primary" href="{{route('showMyVideos')}}">Mi videos</a>
                       <br>
                       <br>
-                      <a href="{{route('addVideoForm')}}">Add Video/Material</a>
+                      <a class="btn btn-primary" href="{{route('addVideoForm')}}">Add Video/Material</a>
                     </div>
 
 

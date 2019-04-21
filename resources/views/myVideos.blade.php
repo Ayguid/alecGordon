@@ -8,17 +8,20 @@
           <div class="card-header">User Dashboard</div>
 
           <div class="card-body">
+            <div class="mb-3">
             <a href="{{route('home')}}">Back to panel</a>
+          </div>
 
             @if (session('status'))
               <div class="alert alert-success" role="alert">
                 {{ session('status') }}
               </div>
             @endif
+            <div class="mb-3">
 
             My Videos
-            <br>
-            <br>
+          </div>
+
 
             @isset($videos)
 
@@ -29,7 +32,7 @@
 
 
                   <div class="col-sm-6 col-md-4 col-lg-3 mb-4 unselectable">
-                    <a href="{{route('editVideo',$video->id)}}">Edit</a> &nbsp; &nbsp; &nbsp; &nbsp;
+                    <a class="btn btn-primary" href="{{route('editVideo',$video->id)}}">Edit</a> &nbsp; &nbsp; &nbsp; &nbsp;
                   <a href="{{route('displayVideo',$video->id)}}">
                     <div class="card_hov">
                       <img class="" width="100%" src="{{asset('./uploads/'.$video->still_pic)}}" alt="">
@@ -42,7 +45,7 @@
                   <form class="delete_form" action="{{route('deleteVideo')}}" method="post">
                     {{ csrf_field() }}
                     <input type="number" name="id" value="{{$video->id}}" hidden>
-                    <input type="submit" name="Delete" value="Delete">
+                    <input class="btn btn-danger" type="submit" name="Delete" value="Delete">
                   </form>
                   </div>
               @endforeach
