@@ -14,25 +14,96 @@ body {
   background-color: black;
 }
 
-section#background-section{
+
+section#home-section{
   min-height: 100vh;
 }
 
-section#background-section #backgroundVideoContainer{
+section#home-section #backgroundVideoContainer{
   position: absolute;
   height: 100%;
   z-index: -900;
   background-color: black;
   overflow:hidden;
 }
-section#background-section #backgroundVideoContainer video{
-  object-position: center;
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
+
+section#home-section #backgroundVideoContainer video{
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  section#home-section #backgroundVideoContainer video{
+    display: block;
+    object-position: center;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 
-#background-section .over-video{
+
+/*  */
+.crossfade > figure {
+  animation: imageAnimation 30s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+.crossfade > figure:nth-child(1) { background-image: url('../img/THUMBNAILS/CHAT-Africa.png'); }
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 6s;
+  background-image: url('../img/THUMBNAILS/Hendricks Gin - The Hour.png');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 12s;
+  background-image: url('../img/THUMBNAILS/Jaguar - Project 8 Track.png');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 18s;
+  background-image: url('../img/THUMBNAILS/Jakotgano - Patagonia Safari.png');
+}
+
+.crossfade > figure:nth-child(5) {
+  animation-delay: 24s;
+  background-image: url('../img/THUMBNAILS/Manchester United Chevrolet Fan Cup - Denis Irwin.png');
+}
+@media screen and (min-width: 768px) {
+  .crossfade{
+    display: none;
+  }
+}
+@keyframes
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
+
+
+#home-section .over-video{
   position: absolute;
   z-index: 10;
   top: 50%;
@@ -63,22 +134,32 @@ section#background-section #backgroundVideoContainer video{
   text-align: center;
 }
 
-
+#contact{
+  min-height: 50vh;
+  padding: 20px;
+}
+#contact h2{
+  margin: 20px;
+  text-align: center;
+}
+#contact .info p{
+  text-align: center;
+}
 .display_background{
   background-color: rgb(121, 121, 121);
   /* min-height: 100vh; */
 }
 
 .videoBox{
-padding:56.25% 0 0 0;
-position:relative;
+  padding:56.25% 0 0 0;
+  position:relative;
 }
 .videoBox iframe{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
 }
 .videoBoxInfo{
   text-align: center;
@@ -153,13 +234,13 @@ height:100%;
 .no-js #loader { display: none;  }
 .js #loader { display: block; position: absolute; left: 100px; top: 0; }
 .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url('../img/loader2.gif') center no-repeat #fff;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('../img/loader2.gif') center no-repeat #fff;
 }
 /*laoder stuff  ends*/
 
@@ -172,20 +253,20 @@ Not supports in Firefox and IE */
 
 /* total width */
 body::-webkit-scrollbar {
-    background-color:#fff;
-    width:16px
+  background-color:#fff;
+  width:16px
 }
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-    background-color:#fff
+  background-color:#fff
 }
 
 /* scrollbar itself */
 body::-webkit-scrollbar-thumb {
-    background-color:#babac0;
-    border-radius:16px;
-    border:4px solid #fff
+  background-color:#babac0;
+  border-radius:16px;
+  border:4px solid #fff
 }
 
 /* set button(top and bottom of the scrollbar) */

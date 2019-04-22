@@ -32,7 +32,7 @@
         </li>
       @endif
       <li>
-        <a href="#" class="nav-links">Contact</a>
+        <a href="#contact" class="nav-links">Contact</a>
       </li>
       <li>
         <a href="#" class="nav-links">About</a>
