@@ -23,8 +23,8 @@
       </div>
     </div>
     <div id="backgroundVideoContainer">
-      <video playsinline autoplay muted loop poster="bg.jpg" id="">
-        <source src="{{asset('video/LANDING.mp4')}}" type="video/mp4">
+      <video playsinline autoplay muted loop id="">
+        <source src="{{asset('video/LANDING_sml.mp4')}}" type="video/mp4">
         </video>
       </div>
 
