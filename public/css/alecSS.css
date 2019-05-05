@@ -134,17 +134,39 @@ imageAnimation {  0% {
   text-align: center;
 }
 
+
+
 #contact{
-  min-height: 50vh;
-  padding: 20px;
+  background-color: rgba(101, 101, 101, 0.53);
 }
 #contact h2{
-  margin: 20px;
+  color: rgb(86, 175, 106);
+  padding:  20px;
   text-align: center;
+  /* border-bottom: 1px solid  rgb(71, 71, 71);
+  padding: 10px; */
+}
+#contact .info {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 #contact .info p{
   text-align: center;
 }
+#contact .info i{
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
+}
+#contact a{
+text-decoration: none;
+color: black;
+}
+
+
+
 .display_background{
   background-color: rgb(121, 121, 121);
   /* min-height: 100vh; */
