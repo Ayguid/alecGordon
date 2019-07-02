@@ -1,3 +1,6 @@
+<div class="triangle"></div>
+
+
 
 <div class="info">
   <div class="row">
@@ -6,8 +9,7 @@
       <p>
         E-MAIL
       </p>
-      <i class="far fa-envelope"><a href="mailto:EMAILADDRESS">&nbsp; atgordon@gmail.com</a>
-</i>
+      <i class="far fa-envelope"><a href="mailto:atgordon@gmail.com">&nbsp; atgordon@gmail.com</a></i>
     </div>
 
     <div class="col-sm-12 col-md-6 col-lg-6 mb-4">

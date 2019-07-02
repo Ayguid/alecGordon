@@ -17,11 +17,12 @@ body {
 
 section#home-section{
   min-height: 100vh;
+
 }
 
 section#home-section #backgroundVideoContainer{
   position: absolute;
-  height: 100%;
+  height: 100vh;
   z-index: -900;
   background-color: black;
   overflow:hidden;
@@ -35,8 +36,7 @@ section#home-section #backgroundVideoContainer video{
     display: block;
     object-position: center;
     object-fit: cover;
-    height: 100%;
-    width: 100%;
+
   }
 }
 
@@ -48,7 +48,7 @@ section#home-section #backgroundVideoContainer video{
   background-size: cover;
   background-position: center center;
   color: transparent;
-  height: 100%;
+  height: 100vh;
   left: 0px;
   opacity: 0;
   position: absolute;
@@ -138,6 +138,12 @@ imageAnimation {  0% {
 
 #contact{
   background-color: rgba(101, 101, 101, 0.53);
+
+  background-image:linear-gradient(black, black), url('../img/pattern1.jpg');
+  /* filter: grayscale(100); */
+  background-blend-mode: saturation;
+
+  background-attachment: fixed;
 }
 #contact h2{
   color: rgb(86, 175, 106);
@@ -145,12 +151,14 @@ imageAnimation {  0% {
   text-align: center;
   /* border-bottom: 1px solid  rgb(71, 71, 71);
   padding: 10px; */
+
 }
 #contact .info {
-  min-height: 50vh;
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  text-shadow: -3px -1px 4px #CCCEC0;
 }
 #contact .info p{
   text-align: center;
@@ -165,6 +173,17 @@ text-decoration: none;
 color: black;
 }
 
+/* .triangle{
+position: relative;
+top:-100px;
+z-index: 100;
+width: 100%;
+height: 0;
+border-style: solid;
+border-width: 57px 200px 0 200px;
+border-radius: 10px;
+border-color: #616161 transparent transparent transparent;
+} */
 
 
 .display_background{
