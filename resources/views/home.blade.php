@@ -23,6 +23,9 @@
                       <br>
                       <br>
                       <a class="btn btn-primary" href="{{route('addVideoForm')}}">Add Video/Material</a>
+                      <br>
+                      <br>
+                      <a class="btn btn-primary" href="{{route('showMyGenres')}}">Genres</a>
                     </div>
 
 

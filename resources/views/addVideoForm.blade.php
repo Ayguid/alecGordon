@@ -52,7 +52,7 @@
               <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Description') }}</label>
 
               <div class="col-md-6">
-                <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{old('description') }}" required autocomplete="description">
+                <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{old('description') }}"  autocomplete="description">
 
                 @if ($errors->has('description'))
                   <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
               <label for="genre" class="col-md-4 col-form-label text-md-right">{{ __('Genre') }}</label>
 
               <div class="col-md-6">
-                <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre" required autocomplete="genre" value="{{old('genre')}}">
+                <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre"  autocomplete="genre" value="{{old('genre')}}">
                 @if ($errors->has('genre'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('genre') }}</strong>
@@ -79,7 +79,7 @@
               <label for="date" class="col-md-4 col-form-label text-md-right">{{ __('Date') }}</label>
 
               <div class="col-md-6">
-                <input id="date" type="text" class="form-control" name="date" required autocomplete="date" value="{{old('date')}}">
+                <input id="date" type="text" class="form-control" name="date"  autocomplete="date" value="{{old('date')}}">
               </div>
             </div>
 
@@ -87,7 +87,7 @@
               <label for="author" class="col-md-4 col-form-label text-md-right">{{ __('Author') }}</label>
 
               <div class="col-md-6">
-                <input id="author" type="text" class="form-control" name="author" required autocomplete="author" value="{{old('author')}}">
+                <input id="author" type="text" class="form-control" name="author"  autocomplete="author" value="{{old('author')}}">
               </div>
             </div>
 
@@ -105,7 +105,7 @@
               <label for="vimeo_dir" class="col-md-4 col-form-label text-md-right">{{ __('Vimeo Dir Number') }}</label>
 
               <div class="col-md-6">
-                <input id="date" type="text" class="form-control" name="vimeo_dir" required autocomplete="vimeo_dir" value="{{old('vimeo_dir')}}" placeholder="just..3432234">
+                <input id="date" type="text" class="form-control" name="vimeo_dir"  autocomplete="vimeo_dir" value="{{old('vimeo_dir')}}" placeholder="just..3432234">
               </div>
             </div>
 

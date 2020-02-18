@@ -32,11 +32,14 @@
         </li>
       @endif
       <li>
-        <a href="#contact" class="nav-links">Contact</a>
+        <a href="#reel-section" class="nav-links">Work</a>
       </li>
       <li>
-        <a href="#" class="nav-links">About</a>
+        <a href="#contact" class="nav-links">Contact</a>
       </li>
+      {{-- <li>
+        <a href="#" class="nav-links">About</a>
+      </li> --}}
     </ul>
   </nav>
 

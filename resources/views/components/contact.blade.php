@@ -3,21 +3,20 @@
 
 
 <div class="info">
-  <div class="row">
-
-    <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
-      <p>
-        E-MAIL
-      </p>
-      <i class="far fa-envelope"><a href="mailto:atgordon@gmail.com">&nbsp; atgordon@gmail.com</a></i>
-    </div>
-
-    <div class="col-sm-12 col-md-6 col-lg-6 mb-4">
-      <p>
-        PHONE
-      </p>
-      <i class="fas fa-phone">&nbsp; +44 751 707 2948</i>
-    </div>
-
+  <h6>Alec Gordon | Film Editor</h6>
+  <br>
+  {{-- <i class="fas fa-phone"></i> --}}
+  {{-- <i class="far fa-envelope"></i> --}}
+  {{-- <div class="row data">
+    +44 751 707 2948
   </div>
+  <br>
+  <div class="row data">
+    <a href="mailto:atgordon@gmail.com">&nbsp; atgordon@gmail.com</a>
+  </div> --}}
+
+  <div class="row data">
+    &nbsp; &nbsp;&nbsp;&nbsp; +44 751 707 2948&nbsp; |    <a href="mailto:atgordon@gmail.com">&nbsp;  atgordon@gmail.com</a>
+  </div>
+
 </div>

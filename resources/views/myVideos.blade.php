@@ -33,7 +33,7 @@
 
                   <div class="col-sm-6 col-md-4 col-lg-3 mb-4 unselectable">
                     <a class="btn btn-primary" href="{{route('editVideo',$video->id)}}">Edit</a> &nbsp; &nbsp; &nbsp; &nbsp;
-                  <a href="{{route('displayVideo',$video->id)}}">
+                  {{-- <a href="{{route('displayVideo',$video->id)}}"> --}}
                     <div class="card_hov">
                       <img class="" width="100%" src="{{asset('./uploads/'.$video->still_pic)}}" alt="">
                       {{-- <div class="overlay">
@@ -41,7 +41,7 @@
                         <h5>{{$video->description}}</h5> <br>
                       </div> --}}
                     </div>
-                  </a>
+                  {{-- </a> --}}
                   <form class="delete_form" action="{{route('deleteVideo')}}" method="post">
                     {{ csrf_field() }}
                     <input type="number" name="id" value="{{$video->id}}" hidden>

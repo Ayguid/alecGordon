@@ -44,6 +44,7 @@ Route::get('/editVideo/{id}', 'VideoController@editVideoForm')->name('editVideo'
 Route::post('/updateVideo/{id}', 'VideoController@updateVideo')->name('updateVideo');
 Route::post('/deleteVideo', 'VideoController@deleteVideo')->name('deleteVideo');
 
+Route::get('/showMyGenres', 'GenreController@showGenres')->name('showMyGenres');
 
 
 

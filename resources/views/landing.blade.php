@@ -4,13 +4,13 @@
 
   <section id="home-section">
     <div class="over-video">
-      <div class="">
+      {{-- <div class="">
         <h1>Alec Gordon</h1>
-      </div>
-      <div class="arrow bounce">
-        <a href="#reel-section">
+      </div> --}}
+      {{-- <div class="arrow bounce"> --}}
+        {{-- <a href="#reel-section">
           <i class="fa fa-angle-down fa-5x"></i>
-        </a>
+        </a> --}}
         <!-- Different arrow options: -->
         <!-- fa fa-arrow-circle-down fa-3x -->
         <!-- fa fa-arrow-down fa-3x -->
@@ -20,7 +20,7 @@
         <!-- fa fa-hand-pointer-o fa-flip-vertical fa-3x -->
         <!-- fa-angle-down -->
         <!-- fa-angle-double-down -->
-      </div>
+      {{-- </div> --}}
     </div>
     <div id="backgroundVideoContainer">
       <video playsinline autoplay muted loop id="">
@@ -38,14 +38,14 @@
     </section>
 
     <section id="reel-section">
-      <h2>Some of my work </h2>
+      {{-- <h2>Some of my work </h2> --}}
 
       @include('components.movies')
 
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      {{-- <h2>Contact</h2> --}}
 
       @include('components.contact')
 

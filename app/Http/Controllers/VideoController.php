@@ -35,10 +35,10 @@ class VideoController extends Controller
   {
     return Validator::make($request->all(),[
       'name' => 'required|max:255',
-      'description' => 'required',
-      'genre' => 'required',
-      'date' => 'required',
-      'author' => 'required',
+      // 'description' => 'required',
+      // 'genre' => 'required',
+      // 'date' => 'required',
+      // 'author' => 'required',
       'vimeo_dir' => 'required',
       'still_pic' => 'file|mimes:jpeg,jpg,gif,bmp,png|max:50000',
     ]);
@@ -58,9 +58,13 @@ class VideoController extends Controller
       else if (!$validator->fails())
       {
         $video = new Video($request->all());
+
+        if ($request->still_pic) {
+
         $video->still_pic= md5(uniqid() . time()) . '.' . $request->still_pic->getClientOriginalExtension();
         // $request->still_pic->storeAs('app/public/uploads/stills', $video->still_pic);
         $request->file('still_pic')->move(public_path("/uploads"), $video->still_pic);
+      }
         $save = $video->save();
       }
       if ($save)
@@ -97,7 +101,10 @@ class VideoController extends Controller
       {
         $video = Video::find($id);
         if ($request->still_pic) {
-          unlink("./uploads/".$video->still_pic);
+          if ($video->still_pic) {
+            // code...
+            unlink("./uploads/".$video->still_pic);
+          }
           $video->still_pic= md5(uniqid() . time()) . '.' . $request->still_pic->getClientOriginalExtension();;
           $request->file('still_pic')->move(public_path("/uploads"), $video->still_pic);
         }
