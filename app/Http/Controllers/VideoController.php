@@ -22,7 +22,7 @@ class VideoController extends Controller
 
   public function showMyVideos()
   {
-    $videos = Video::all();
+    $videos = Video::orderBy('sequence')->get();
     return view('myVideos')->with('videos', $videos);
   }
 
@@ -58,7 +58,7 @@ class VideoController extends Controller
       else if (!$validator->fails())
       {
         $video = new Video($request->all());
-
+        $video->sequence = Video::max('sequence')+1;
         if ($request->still_pic) {
 
         $video->still_pic= md5(uniqid() . time()) . '.' . $request->still_pic->getClientOriginalExtension();
@@ -144,6 +144,23 @@ class VideoController extends Controller
         $request->session()->flash('alert-danger', 'There was a problem removing your Video!');
         return redirect(route('showMyVideos'));
       }
+    });
+  }
+
+
+
+
+
+  public function saveSeq(Request $request)
+  {
+    return DB::transaction(function () use ($request) {
+
+    foreach ($request->save_seq as $key => $video) {
+      $video = Video::find($video);
+      $video->sequence=$key;
+      $video->update();
+    }
+    return $request;
     });
   }
 

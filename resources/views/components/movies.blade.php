@@ -1,26 +1,29 @@
+
+
+
 <div class="row">
 
   @php
-  $videos=App\Video::all();
-@endphp
+  $videos=App\Video::orderBy('sequence')->get();
+  @endphp
 
-@foreach ($videos as $key => $video)
-  <div class="col-sm-6 col-md-4 col-lg-3 m-0 p-0 unselectable ">
-    <input value="{{$key}}" type="number" name=""  hidden>
-    {{-- <a href="{{route('displayVideo',$video->id)}}"> --}}
-    <div class="card_hov">
-      <img class="" width="100%" src="{{asset('./uploads/'.$video->still_pic)}}" alt="">
-      <div class="overlay">
-        <h5>{{$video->name}}</h5>
-        @if ($video->description)
-          <br>
-          <h6>{{$video->description}}</h6> <br>
-        @endif
+  @foreach ($videos as $key => $video)
+    <div class="col-sm-6 col-md-4 col-lg-3 m-0 p-0 unselectable ">
+      <input value="{{$key}}" type="number" name=""  hidden>
+      {{-- <a href="{{route('displayVideo',$video->id)}}"> --}}
+      <div class="card_hov">
+        <img class="" width="100%" src="{{asset('./uploads/'.$video->still_pic)}}" alt="">
+        <div class="overlay">
+          <h5>{{$video->name}}</h5>
+          @if ($video->description)
+            <br>
+            <h6>{{$video->description}}</h6> <br>
+          @endif
+        </div>
       </div>
+      {{-- </a> --}}
     </div>
-    {{-- </a> --}}
-  </div>
-@endforeach
+  @endforeach
 
 
 </div>

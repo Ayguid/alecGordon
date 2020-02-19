@@ -22,6 +22,7 @@ class CreateVideosTable extends Migration
             $table->string('author')->nullable();
             $table->string('still_pic')->nullable();
             $table->string('vimeo_dir');
+            $table->integer('sequence');
             $table->timestamps();
         });
     }

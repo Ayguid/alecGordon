@@ -444,3 +444,61 @@ p#modal-info{
   text-decoration: none;
   cursor: pointer;
 }
+
+
+
+/* .redips-drag{
+  border-style: none !important;
+}
+.redips-drag img{
+  width: 100%;
+  max-width: 300px;
+} */
+
+
+
+
+
+/* drag objects */
+.redips-drag {
+    cursor: move;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    font-size: 22pt; /* needed for cloned object */
+    width: 250px;
+    /* height: 35px; */
+    line-height: 35px;
+    /* round corners */
+    border-radius: 4px; /* Opera, Chrome */
+    -moz-border-radius: 4px; /* FF */
+}
+
+@media only screen and (max-width: 768px) {
+  .redips-drag{
+    width: 175px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .redips-drag{
+    width: 100px;
+  }
+}
+
+
+
+
+/* tables */
+div#redips-drag table {
+    background-color: #ddd;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+/* table cells */
+div#redips-drag td {
+    border: 1px white solid;
+    /* height: 50px; */
+    text-align: center;
+    font-size: 10pt;
+}

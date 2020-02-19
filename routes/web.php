@@ -47,6 +47,7 @@ Route::post('/deleteVideo', 'VideoController@deleteVideo')->name('deleteVideo');
 Route::get('/showMyGenres', 'GenreController@showGenres')->name('showMyGenres');
 
 
+Route::post('/saveSeq', 'VideoController@saveSeq')->name('saveSeq');
 
 
 /*
