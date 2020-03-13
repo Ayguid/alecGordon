@@ -66,7 +66,18 @@
               <label for="genre" class="col-md-4 col-form-label text-md-right">{{ __('Genre') }}</label>
 
               <div class="col-md-6">
-                <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre"  autocomplete="genre" value="{{old('genre')}}">
+                {{-- <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre"  autocomplete="genre" value="{{old('genre')}}">
+                @if ($errors->has('genre'))
+                  <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('genre') }}</strong>
+                  </span>
+                @endif --}}
+                <select id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre_id">
+
+                  @foreach (App\Genre::all() as $genre)
+                    <option value="{{$genre->id}}" {{($genre->name=="Other")?'selected':''}}>{{$genre->name}}</option>
+                  @endforeach
+                </select>
                 @if ($errors->has('genre'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('genre') }}</strong>

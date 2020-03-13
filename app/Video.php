@@ -14,7 +14,7 @@ class Video extends Model
 
 
   protected $fillable = [
-    'name', 'description', 'genre', 'date', 'author', 'still_pic', 'vimeo_dir', 'sequence'
+    'name', 'description', 'genre_id', 'date', 'author', 'still_pic', 'vimeo_dir', 'sequence'
   ];
 
 

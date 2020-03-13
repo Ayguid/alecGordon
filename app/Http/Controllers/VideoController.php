@@ -8,6 +8,7 @@ use Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Video;
+use App\MovieInGenre;
 use DB;
 
 class VideoController extends Controller
@@ -58,6 +59,8 @@ class VideoController extends Controller
       else if (!$validator->fails())
       {
         $video = new Video($request->all());
+        $movieInGenre = new MovieInGenre();
+
         $video->sequence = Video::max('sequence')+1;
         if ($request->still_pic) {
 
@@ -66,6 +69,9 @@ class VideoController extends Controller
         $request->file('still_pic')->move(public_path("/uploads"), $video->still_pic);
       }
         $save = $video->save();
+        $movieInGenre->movie_id=$video->id;
+        $movieInGenre->genre_id=$request->genre_id;
+        // dd($movieInGenre);
       }
       if ($save)
       {
@@ -110,7 +116,7 @@ class VideoController extends Controller
         }
         $video->name=$request->name;
         $video->description=$request->description;
-        $video->genre=$request->genre;
+        $video->genre_id=$request->genre_id;
         $video->date=$request->date;
         $video->author=$request->author;
         $video->vimeo_dir=$request->vimeo_dir;
@@ -118,7 +124,7 @@ class VideoController extends Controller
       }
       if ($save)
       {
-        $request->session()->flash('alert-success', 'Added Succesfully!');
+        $request->session()->flash('alert-success', 'Edited Succesfully!');
         return redirect(route('editVideo', $id));
       }
       else
@@ -133,9 +139,11 @@ class VideoController extends Controller
   {
     return DB::transaction(function () use ($request) {
       $video = Video::find($request->id);
-      if (unlink("./uploads/".$video->still_pic))
+      if ($video->delete())
       {
-        $video->delete();
+        if ($video->still_pic) {
+          unlink("./uploads/".$video->still_pic);
+        }
         $request->session()->flash('alert-success', 'Removed Succesfully!');
         return redirect(route('showMyVideos'));
       }

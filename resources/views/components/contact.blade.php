@@ -1,22 +1,17 @@
-<div class="triangle"></div>
-
 
 
 <div class="info">
-  <h6>Alec Gordon | Film Editor</h6>
-  <br>
-  {{-- <i class="fas fa-phone"></i> --}}
-  {{-- <i class="far fa-envelope"></i> --}}
-  {{-- <div class="row data">
-    +44 751 707 2948
-  </div>
-  <br>
-  <div class="row data">
-    <a href="mailto:atgordon@gmail.com">&nbsp; atgordon@gmail.com</a>
-  </div> --}}
 
-  <div class="row data">
-    &nbsp; &nbsp;&nbsp;&nbsp; +44 751 707 2948&nbsp; |    <a href="mailto:atgordon@gmail.com">&nbsp;  atgordon@gmail.com</a>
-  </div>
+<div class="logo_footer">
+  <img src="{{asset('img/footer/logoFooterYellow.png')}}" alt="">
+</div>
+
+  <h6>ALEC GORDON</h6>
+  <h6>+44 7517 072 948</h6>
+  <h6><a href="mailto:atgordon@gmail.com">atgordon@gmail.com</h6>
+
+  <i class="fab fa-instagram"></i>&nbsp;
+  <i class="fas fa-envelope"></i>
+
 
 </div>
