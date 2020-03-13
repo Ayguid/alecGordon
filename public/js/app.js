@@ -1809,9 +1809,9 @@ __webpack_require__.r(__webpack_exports__);
 
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
+        var current = document.getElementsByClassName("activa");
+        current[0].className = current[0].className.replace(" activa", "");
+        this.className += " activa";
       });
     }
 
@@ -37273,7 +37273,7 @@ var render = function() {
         _c(
           "button",
           {
-            staticClass: "filterButton active",
+            staticClass: "filterButton activa",
             on: {
               click: function($event) {
                 return _vm.filter()
@@ -49586,6 +49586,14 @@ var app = new Vue({
     return {
       baseUrl: window.axios.defaults.baseURL
     };
+  },
+  mounted: function mounted() {
+    var recaptchaScript = document.createElement('script');
+    recaptchaScript.setAttribute('src', this.baseUrl + '/js/nav-bar.js');
+    document.head.appendChild(recaptchaScript);
+    var recaptchaScript2 = document.createElement('script');
+    recaptchaScript2.setAttribute('src', this.baseUrl + '/js/scroll.js');
+    document.head.appendChild(recaptchaScript2);
   }
 });
 

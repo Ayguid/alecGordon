@@ -2,7 +2,7 @@
   <div class="">
 
   <div id="filterMenu" class="filterMenu">
-    <button class="filterButton active" @click="filter()">ALL</button>
+    <button class="filterButton activa" @click="filter()">ALL</button>
     <button v-for="(genre, index) in genres" class="filterButton" @click="filter(genre)">{{genre.name.toUpperCase()}}</button>
   </div>
 
@@ -74,9 +74,9 @@ export default {
     var btns = document.getElementsByClassName("filterButton");
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
+      var current = document.getElementsByClassName("activa");
+      current[0].className = current[0].className.replace(" activa", "");
+      this.className += " activa";
       });
     }
     window.onclick = function(event) {

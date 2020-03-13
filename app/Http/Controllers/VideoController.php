@@ -41,7 +41,7 @@ class VideoController extends Controller
       // 'date' => 'required',
       // 'author' => 'required',
       'vimeo_dir' => 'required',
-      'still_pic' => 'file|mimes:jpeg,jpg,gif,bmp,png|max:50000',
+      'still_pic' => 'required|file|mimes:jpeg,jpg,gif,bmp,png|max:50000',
     ]);
   }
 
@@ -59,7 +59,7 @@ class VideoController extends Controller
       else if (!$validator->fails())
       {
         $video = new Video($request->all());
-        $movieInGenre = new MovieInGenre();
+        // $movieInGenre = new MovieInGenre();
 
         $video->sequence = Video::max('sequence')+1;
         if ($request->still_pic) {
@@ -69,8 +69,8 @@ class VideoController extends Controller
         $request->file('still_pic')->move(public_path("/uploads"), $video->still_pic);
       }
         $save = $video->save();
-        $movieInGenre->movie_id=$video->id;
-        $movieInGenre->genre_id=$request->genre_id;
+        // $movieInGenre->movie_id=$video->id;
+        // $movieInGenre->genre_id=$request->genre_id;
         // dd($movieInGenre);
       }
       if ($save)

@@ -532,7 +532,7 @@ div#redips-drag td {
 border: none;}
 
 /* Style the active class, and buttons on mouse-over */
-.active, .filterButton:hover {
+.activa, .filterButton:hover {
   background-color: #FFD600 !important;
   color: #1A1A1A !important;
 }
