@@ -5,6 +5,23 @@
   <meta name="base-url" content="{{ url('') }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alec Gordon</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="./img/favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./img/favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./img/favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./img/favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./img/favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./img/favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./img/favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./img/favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <!-- Fonts -->
   {{-- <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet"> --}}
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -21,123 +38,38 @@
 <body>
   <div id="app">
 
-  <div class="se-pre-con"></div>
+    <div class="se-pre-con"></div>
 
-  <nav id="navbarA" class="navbarA">
-    <span class="navbar-toggle" id="js-navbar-toggle">
-      <i class="fas fa-bars"></i>
-    </span>
-    <a href="{{route('landing')}}" class="logo">
-      <img src="{{asset('img/header/headerLogoNombre.png')}}" alt="" width="100%">
-    </a>
-    <ul class="main-nav" id="js-menu">
-      @if(Auth::user())
+    <nav id="navbarA" class="navbarA">
+      <span class="navbar-toggle" id="js-navbar-toggle">
+        <i class="fas fa-bars"></i>
+      </span>
+      <a href="#home-section" class="logo">
+        <img src="{{asset('img/header/headerLogoNombre.png')}}" alt="" width="100%">
+      </a>
+      <ul class="main-nav" id="js-menu">
+        @if(Auth::user())
+          <li>
+            <a href="{{route('home')}}" class="nav-links">ADMIN</a>
+          </li>
+        @endif
         <li>
-          <a href="{{route('home')}}" class="nav-links">Admin</a>
+          <a href="#reel-section" class="nav-links">WORK</a>
         </li>
-      @endif
-      <li>
-        <a href="#reel-section" class="nav-links">Work</a>
-      </li>
-      <li>
-        <a href="#contact" class="nav-links">Contact</a>
-      </li>
-      {{-- <li>
+        <li>
+          <a href="#contact" class="nav-links">CONTACT</a>
+        </li>
+        {{-- <li>
         <a href="#" class="nav-links">About</a>
       </li> --}}
     </ul>
   </nav>
 
   <main  class="">
-      @yield('content')
+    @yield('content')
   </main>
 
 
-    </div>
-  </body>
-  </html>
-  {{-- <script src="{{ asset('js/nav-bar.js') }}" ></script>
-  <script type="text/javascript" src="{{ asset('js/scroll.js') }}"> </script> --}}
-
-  <script type="text/javascript">
-  (function(document, history, location) {
-    var HISTORY_SUPPORT = !!(history && history.pushState);
-
-    var anchorScrolls = {
-      ANCHOR_REGEX: /^#[^ ]+$/,
-      OFFSET_HEIGHT_PX: 70,
-
-      /**
-      * Establish events, and fix initial scroll position if a hash is provided.
-      */
-      init: function() {
-        this.scrollToCurrent();
-        window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
-        document.body.addEventListener('click', this.delegateAnchors.bind(this));
-      },
-
-      /**
-      * Return the offset amount to deduct from the normal scroll position.
-      * Modify as appropriate to allow for dynamic calculations
-      */
-      getFixedOffset: function() {
-        return this.OFFSET_HEIGHT_PX;
-      },
-
-      /**
-      * If the provided href is an anchor which resolves to an element on the
-      * page, scroll to it.
-      * @param  {String} href
-      * @return {Boolean} - Was the href an anchor.
-      */
-      scrollIfAnchor: function(href, pushToHistory) {
-        var match, rect, anchorOffset;
-
-        if(!this.ANCHOR_REGEX.test(href)) {
-          return false;
-        }
-
-        match = document.getElementById(href.slice(1));
-
-        if(match) {
-          rect = match.getBoundingClientRect();
-          anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
-          window.scrollTo(window.pageXOffset, anchorOffset);
-
-          // Add the state to history as-per normal anchor links
-          if(HISTORY_SUPPORT && pushToHistory) {
-            history.pushState({}, document.title, location.pathname + href);
-          }
-        }
-
-        return !!match;
-      },
-
-      /**
-      * Attempt to scroll to the current location's hash.
-      */
-      scrollToCurrent: function() {
-        this.scrollIfAnchor(window.location.hash);
-      },
-
-      /**
-      * If the click event's target was an anchor, fix the scroll position.
-      */
-      delegateAnchors: function(e) {
-        var elem = e.target;
-
-        if(
-        elem.nodeName === 'A' &&
-        this.scrollIfAnchor(elem.getAttribute('href'), true)
-        ) {
-          e.preventDefault();
-        }
-      }
-    };
-
-    window.addEventListener(
-    'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
-    );
-  })(window.document, window.history, window.location);
-
-</script>
+</div>
+</body>
+</html>

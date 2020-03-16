@@ -41,8 +41,8 @@ const app = new Vue({
   let recaptchaScript = document.createElement('script')
   recaptchaScript.setAttribute('src', this.baseUrl+'/js/nav-bar.js')
   document.head.appendChild(recaptchaScript)
-  let recaptchaScript2 = document.createElement('script')
-  recaptchaScript2.setAttribute('src', this.baseUrl+'/js/scroll.js')
-  document.head.appendChild(recaptchaScript2)
+  // let recaptchaScript2 = document.createElement('script')
+  // recaptchaScript2.setAttribute('src', this.baseUrl+'/js/scroll.js')
+  // document.head.appendChild(recaptchaScript2)
 }
 });

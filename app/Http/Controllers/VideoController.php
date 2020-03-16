@@ -41,7 +41,7 @@ class VideoController extends Controller
       // 'date' => 'required',
       // 'author' => 'required',
       'vimeo_dir' => 'required',
-      'still_pic' => 'required|file|mimes:jpeg,jpg,gif,bmp,png|max:50000',
+      'still_pic' => 'file|mimes:jpeg,jpg,gif,bmp,png|max:50000',
     ]);
   }
 
