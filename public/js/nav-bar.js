@@ -39,3 +39,10 @@ for (var i = 0; i < links.length; i++) {
     mainNav.classList.toggle('active');
   }
 }
+
+
+// links.forEach((link )=> {
+//   link.onclick=function(){
+//     mainNav.classList.toggle('active');
+//   }
+// });
