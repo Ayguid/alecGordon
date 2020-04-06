@@ -8,22 +8,26 @@
       <img width="100%" src="{{asset('img/landing/logoLanding.png')}}" alt="">
     </div>
 
+
+
     <div id="backgroundVideoContainer">
       <video preload="none" playsinline autoplay muted loop id="">
         <source src="{{asset('video/LANDING_2020.mp4')}}" type="video/mp4">
         </video>
       </div>
 
-      {{-- <div class="crossfade">
-      <figure></figure>
-      <figure></figure>
-      <figure></figure>
-      <figure></figure>
-      <figure></figure>
-      <figure></figure>
-      <figure></figure>
-    </div> --}}
+
   </section>
+
+  {{-- <div class="crossfade">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+</div> --}}
 
   <section id="reel-section">
     @include('components.movies')

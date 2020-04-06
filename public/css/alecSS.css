@@ -39,8 +39,8 @@ section#home-section #backgroundVideoContainer video{
   display: block;
 }
 @media screen and (min-width: 768px) {
-  section#home-section #backgroundVideoContainer video{
-  }
+  /* section#home-section #backgroundVideoContainer video{
+  } */
 }
 
 
@@ -114,8 +114,11 @@ imageAnimation {  0% {
   z-index: 10;
   top: 50%;
   transform: translateY(-50%);
-  width: 800px;
-  left: calc(50% - 400px);
+  width: 100%;
+  /* left: calc(50% - 400px); */
+}
+#home-section .over-video img{
+
 }
 /* @media only screen and (max-width: 576px) {
   #home-section .over-video{
