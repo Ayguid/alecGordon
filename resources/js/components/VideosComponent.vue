@@ -49,9 +49,11 @@ export default {
     filter:function(genre){
       this.filtered_movies=this.movies;
       if (genre) {
-        this.filtered_movies=this.filtered_movies.filter(function(movie) {
-        return movie.genre_id == genre.id;
-      });
+      //   this.filtered_movies=this.filtered_movies.filter(function(movie) {
+      //   return movie.genre_id == genre.id;
+      // });
+        this.filtered_movies = this.filtered_movies.filter(movie => movie.genres.some(gr => gr.id == genre.id));
+        // return resutl;
       }
     },
     pushToModal:function(movie_to_modal){
@@ -64,6 +66,7 @@ export default {
     }
   },
   mounted() {
+    // console.log(this.videos);
     const modal = document.getElementById('myModal');
     const iframe = document.getElementById('iframe');
     const span = document.getElementById("close-modal");

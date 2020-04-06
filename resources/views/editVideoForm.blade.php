@@ -62,22 +62,28 @@
               </div>
             </div>
 
+
             <div class="form-group row">
               <label for="genre" class="col-md-4 col-form-label text-md-right">{{ __('Genre') }}</label>
 
               <div class="col-md-6">
-                {{-- <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre"  autocomplete="genre" value="{{$video->genre}}">
+                {{-- <input id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre"  autocomplete="genre" value="{{old('genre')}}">
                 @if ($errors->has('genre'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('genre') }}</strong>
                   </span>
                 @endif --}}
-                <select id="genre" type="text" class="form-control{{ $errors->has('genre') ? ' is-invalid' : '' }}" name="genre_id">
-
                   @foreach (App\Genre::all() as $genre)
-                    <option value="{{$genre->id}}" {{($genre->id==$video->genre_id)?'selected':''}}>{{$genre->name}}</option>
+                    {{-- {{dd($video->checkIfInGenre($genre->id))}} --}}
+                    <div class="form-check">
+                    {{-- <option value="{{$genre->id}}" {{($genre->name=="Other")?'selected':''}}>{{$genre->name}}</option> --}}
+                    <input class="form-check-input" type="checkbox" name="genre_ids[]" {{$video->checkIfInGenre($genre->id)?'checked':''}} value="{{$genre->id}}" >
+                    <label class="form-check-label" for="defaultCheck1">
+                      {{$genre->name}}
+                    </label>
+                    </div>
                   @endforeach
-                </select>
+
                 @if ($errors->has('genre'))
                   <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('genre') }}</strong>

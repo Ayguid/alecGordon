@@ -50,7 +50,7 @@ class VideoController extends Controller
     return DB::transaction(function () use ($request) {
 
       $validator = $this->validateInputs($request);
-
+      // dd($request);
       $save = false;
       if ($validator->fails())
       {
@@ -61,6 +61,7 @@ class VideoController extends Controller
         $video = new Video($request->all());
         // $movieInGenre = new MovieInGenre();
 
+
         $video->sequence = Video::max('sequence')+1;
         if ($request->still_pic) {
 
@@ -69,9 +70,14 @@ class VideoController extends Controller
         $request->file('still_pic')->move(public_path("/uploads"), $video->still_pic);
       }
         $save = $video->save();
-        // $movieInGenre->movie_id=$video->id;
-        // $movieInGenre->genre_id=$request->genre_id;
-        // dd($movieInGenre);
+        if ($request->genre_ids) {
+          foreach ($request->genre_ids as $key => $genreId) {
+            $movieInGenre = new MovieInGenre();
+            $movieInGenre->movie_id = $video->id;
+            $movieInGenre->genre_id = $genreId;
+            $movieInGenre->save();
+          }
+        }
       }
       if ($save)
       {
@@ -116,7 +122,18 @@ class VideoController extends Controller
         }
         $video->name=$request->name;
         $video->description=$request->description;
-        $video->genre_id=$request->genre_id;
+        // $video->genre_id=$request->genre_id;
+        $video->myGenres->each(function($mig){
+          $mig->delete();
+        });
+        if ($request->genre_ids) {
+          foreach ($request->genre_ids as $key => $genreId) {
+            $movieInGenre = new MovieInGenre();
+            $movieInGenre->movie_id = $video->id;
+            $movieInGenre->genre_id = $genreId;
+            $movieInGenre->save();
+          }
+        }
         $video->date=$request->date;
         $video->author=$request->author;
         $video->vimeo_dir=$request->vimeo_dir;
@@ -139,11 +156,16 @@ class VideoController extends Controller
   {
     return DB::transaction(function () use ($request) {
       $video = Video::find($request->id);
+      // dd($video->myGenres);
+      $video->myGenres->each(function($mig){
+        $mig->delete();
+      });
       if ($video->delete())
       {
         if ($video->still_pic) {
           unlink("./uploads/".$video->still_pic);
         }
+        // $video->
         $request->session()->flash('alert-success', 'Removed Succesfully!');
         return redirect(route('showMyVideos'));
       }

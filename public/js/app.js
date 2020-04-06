@@ -1781,9 +1781,14 @@ __webpack_require__.r(__webpack_exports__);
       this.filtered_movies = this.movies;
 
       if (genre) {
+        //   this.filtered_movies=this.filtered_movies.filter(function(movie) {
+        //   return movie.genre_id == genre.id;
+        // });
         this.filtered_movies = this.filtered_movies.filter(function (movie) {
-          return movie.genre_id == genre.id;
-        });
+          return movie.genres.some(function (gr) {
+            return gr.id == genre.id;
+          });
+        }); // return resutl;
       }
     },
     pushToModal: function pushToModal(movie_to_modal) {
@@ -1796,6 +1801,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    // console.log(this.videos);
     var modal = document.getElementById('myModal');
     var iframe = document.getElementById('iframe');
     var span = document.getElementById("close-modal");

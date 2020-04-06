@@ -13,7 +13,7 @@ class MoviesInGenre extends Migration
      */
     public function up()
     {
-        Schema::create('movie_in_genre', function (Blueprint $table) {
+        Schema::create('movies_in_genres', function (Blueprint $table) {
           $table->bigIncrements('id');
           $table->bigInteger('movie_id');
           $table->bigInteger('genre_id');
@@ -28,7 +28,7 @@ class MoviesInGenre extends Migration
      */
     public function down()
     {
-        Schema::table('movie_in_genre', function (Blueprint $table) {
+        Schema::table('movies_in_genres', function (Blueprint $table) {
             //
         });
     }
