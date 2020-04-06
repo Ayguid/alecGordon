@@ -21,8 +21,7 @@
       </div>
 
       <div class="vimeo-wrapper">
-         <iframe src="{{$video}}"
-                 frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+         <iframe src="{{$video}}"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
 
       {{-- <div class="crossfade">
