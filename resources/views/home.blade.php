@@ -19,6 +19,9 @@
                   </div>
 
                     <div class="">
+                      <a class="btn btn-primary" href="{{route('indexSettings')}}">Landing Settings</a>
+                      <br>
+                      <br>
                       <a class="btn btn-primary" href="{{route('showMyVideos')}}">Mi videos</a>
                       <br>
                       <br>

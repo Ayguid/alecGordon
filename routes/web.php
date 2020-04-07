@@ -50,6 +50,10 @@ Route::get('/showMyGenres', 'GenreController@showGenres')->name('showMyGenres');
 Route::post('/saveSeq', 'VideoController@saveSeq')->name('saveSeq');
 
 
+Route::get('/settings', 'SettingsController@index')->name('indexSettings');
+Route::post('/setBackVid', 'SettingsController@setVid')->name('setVid');
+
+
 /*
 //admin sections
 Route::prefix('admin')->group(function(){
