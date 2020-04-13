@@ -1794,7 +1794,7 @@ __webpack_require__.r(__webpack_exports__);
     pushToModal: function pushToModal(movie_to_modal) {
       var modal_info = document.getElementById('modal-info');
       var modal = document.getElementById('myModal');
-      var iframe = document.getElementById('iframe');
+      var iframe = document.getElementById('iframePlayer');
       modal.style.display = "block";
       iframe.src = "https://player.vimeo.com/video/" + movie_to_modal.vimeo_dir + "?autoplay=1&transparent=false";
       modal_info.innerHTML = movie_to_modal.name;
@@ -1803,7 +1803,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     // console.log(this.videos);
     var modal = document.getElementById('myModal');
-    var iframe = document.getElementById('iframe');
+    var iframe = document.getElementById('iframePlayer');
     var span = document.getElementById("close-modal");
 
     span.onclick = function () {
@@ -37377,7 +37377,7 @@ var staticRenderFns = [
         _c("div", { staticClass: "videoBox" }, [
           _c("iframe", {
             attrs: {
-              id: "iframe",
+              id: "iframePlayer",
               src: "",
               width: "",
               height: "",
