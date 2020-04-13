@@ -8,7 +8,8 @@
 
 
   <div class="row">
-    <div v-for="(video, index) in filtered_movies" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 m-0 p-0 unselectable">
+    <div v-for="(video, index) in filtered_movies" class="col-sm-6 col-md-4 col-lg-4 col-xl-4 m-0 p-0 unselectable" transition="expand">
+
       <div class="card_hov">
         <img class="" width="100%" :src="$root.baseUrl+'/uploads/'+video.still_pic" alt="">
         <div class="overlay" @click="pushToModal(video)">
@@ -17,6 +18,7 @@
           <h6 v-if="video.description">{{video.description}}</h6> <br>
         </div>
       </div>
+
     </div>
 
   </div>

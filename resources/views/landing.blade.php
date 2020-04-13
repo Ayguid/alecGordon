@@ -13,7 +13,7 @@
       $jsonString = file_get_contents(base_path('resources/settings.json'));
       $data = json_decode($jsonString, true);
       $backVid = $data['backVid'];
-      $video = 'https://player.vimeo.com/video/'.$backVid."?background=1&autoplay=1&loop=1&byline=0&title=0";
+      $video = 'https://player.vimeo.com/video/'.$backVid."?background=1";
       // dd($video);
     @endphp
 
@@ -24,7 +24,7 @@
       </div> --}}
 
       <div class="vimeo-wrapper">
-         <iframe src="{{$video}}"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+         <iframe src="{{$video}}"frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
       </div>
 
       {{-- <div class="crossfade">
