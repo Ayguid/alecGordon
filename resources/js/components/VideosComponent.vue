@@ -27,7 +27,7 @@
       <span id=close-modal class="close-modal">&times;</span>
       <p id="modal-info"></p>
       <div class="videoBox">
-        <iframe id="iframe" src="" width="" height="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <iframe id="iframePlayer" src="" width="" height="" allow="autoplay; fullscreen" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -59,7 +59,7 @@ export default {
     pushToModal:function(movie_to_modal){
       const modal_info = document.getElementById('modal-info');
       const modal = document.getElementById('myModal');
-      const iframe = document.getElementById('iframe');
+      const iframe = document.getElementById('iframePlayer');
       modal.style.display = "block";
       iframe.src="https://player.vimeo.com/video/"+movie_to_modal.vimeo_dir+"?autoplay=1&transparent=false";
       modal_info.innerHTML=movie_to_modal.name;
@@ -68,7 +68,7 @@ export default {
   mounted() {
     // console.log(this.videos);
     const modal = document.getElementById('myModal');
-    const iframe = document.getElementById('iframe');
+    const iframe = document.getElementById('iframePlayer');
     const span = document.getElementById("close-modal");
     span.onclick = function() {
       modal.style.display = "none";
