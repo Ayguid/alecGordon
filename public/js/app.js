@@ -1796,21 +1796,21 @@ __webpack_require__.r(__webpack_exports__);
     pushToModal: function pushToModal(movie_to_modal) {
       var modal_info = document.getElementById('modal-info');
       var modal = document.getElementById('myModal');
-      var iframe = document.getElementById('iframePlayer');
+      var plyr = document.getElementById('iframePlayer');
       modal.style.display = "block";
-      iframe.src = "https://player.vimeo.com/video/" + movie_to_modal.vimeo_dir + "?autoplay=1&transparent=false";
+      plyr.src = "https://player.vimeo.com/video/" + movie_to_modal.vimeo_dir + "?autoplay=1&transparent=false";
       modal_info.innerHTML = movie_to_modal.name;
     }
   },
   mounted: function mounted() {
     // console.log(this.videos);
     var modal = document.getElementById('myModal');
-    var iframe = document.getElementById('iframePlayer');
+    var iframeP = document.getElementById('iframePlayer');
     var span = document.getElementById("close-modal");
 
     span.onclick = function () {
       modal.style.display = "none";
-      iframe.src = "/";
+      iframeP.src = "/";
     };
 
     var btns = document.getElementsByClassName("filterButton");
@@ -1826,7 +1826,7 @@ __webpack_require__.r(__webpack_exports__);
     window.onclick = function (event) {
       if (event.target == modal) {
         modal.style.display = "none";
-        iframe.src = "/";
+        iframeP.src = "/";
       }
     };
   }
